@@ -1,6 +1,7 @@
 appsettings.Development.json
 appsettings.json
 *.db
+server/DL/Migrations
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/dotnetcore,aspnetcore,visualstudiocode,react,node
