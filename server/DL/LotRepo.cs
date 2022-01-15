@@ -40,7 +40,7 @@ namespace DL
         {
             return await _context.Lots
                 .AsNoTracking()
-                .FirstOrDefaultAsync(lot => lot.name == name);
+                .FirstOrDefaultAsync(lot => lot.LotName == name);
         }
 
         public async Task<List<Lot>> GetLotsAsync()
