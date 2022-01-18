@@ -37,6 +37,16 @@ namespace API.Controllers
             return Ok(user);
         }
 
+        // GET: api/<UserController>/5
+        [HttpGet("{email}")]
+        [Produces("application/json")]
+        public async Task<IActionResult> GetUserByEmailAsync(string email)
+        {
+            var user = await _userBL.GetUserByEmailAsync(email);
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
+
         // POST: api/<UserController>
         [HttpPost]
         [Consumes("application/json")]

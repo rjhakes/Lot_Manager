@@ -14,10 +14,12 @@ namespace API.Controllers
     public class ReservationController : ControllerBase
     {
         private readonly IReservationBL _reservationBL;
+        private readonly IUserBL _userBL;
         
-        public ReservationController(IReservationBL reservationBL) //IMediator mediator)
+        public ReservationController(IReservationBL reservationBL, IUserBL userBL) //IMediator mediator)
         {
             _reservationBL = reservationBL;
+            _userBL = userBL;
         }
 
         // GET: api/<ReservationController>
@@ -33,6 +35,30 @@ namespace API.Controllers
         public async Task<IActionResult> GetReservationByIdAsync(Guid id)
         {
             var reservation = await _reservationBL.GetReservationByIdAsync(id);
+            if (reservation == null) return NotFound();
+            return Ok(reservation);
+        }
+
+        // FIXME: get user reservations (pass id or user?)
+        //          can't use userBL GetById because Task<Model.User> != Model.User
+        // GET: api/<ReservationController>/5
+        [HttpGet("{user}")]
+        [Produces("application/json")]
+        public async Task<IActionResult> GetReservationByUserAsync(User user)
+        {
+            var reservation = await _reservationBL.GetReservationsByUserAsync(user);
+            if (reservation == null) return NotFound();
+            return Ok(reservation);
+        }
+
+        // FIXME: get spot reservation (pass id or spot?)
+        //          can't use spotBL GetById because Task<Model.Spot> != Model.Spot
+        // GET: api/<ReservationController>/5
+        [HttpGet("{spot}")]
+        [Produces("application/json")]
+        public async Task<IActionResult> GetReservationByIdAsync(Spot spot)
+        {
+            var reservation = await _reservationBL.GetReservationsBySpotAsync(spot);
             if (reservation == null) return NotFound();
             return Ok(reservation);
         }

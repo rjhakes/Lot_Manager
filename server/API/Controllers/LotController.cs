@@ -37,6 +37,16 @@ namespace API.Controllers
             return Ok(lot);
         }
 
+        // GET: api/<LotController>/5
+        [HttpGet("{name}")]
+        [Produces("application/json")]
+        public async Task<IActionResult> GetLotByNameAsync(string name)
+        {
+            var lot = await _lotBL.GetLotByNameAsync(name);
+            if (lot == null) return NotFound();
+            return Ok(lot);
+        }
+
         // POST: api/<LotController>
         [HttpPost]
         [Consumes("application/json")]
