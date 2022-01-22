@@ -15,6 +15,7 @@ code {
 .nav-logo {
   width: 3em;
   height: 3em;
+  margin-left: 10%;
 }
 
 .ui.inverted.top.fixed.menu {
