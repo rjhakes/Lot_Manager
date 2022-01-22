@@ -7,8 +7,8 @@ export default function NavBar() {
         <Menu inverted fixed='top'>
             <Container>
                 <Menu.Item as={NavLink} to='/' header>
-                    <img src="/assets/mobile-home.png" alt="logo" style={{marginRight: '10px'}}/>
-                    Lot Manager
+                    <img src="/assets/mobile-home.png" className="nav-logo" alt="logo" style={{marginRight: '10px'}}/>
+                    {/* Lot Manager */}
                 </Menu.Item>
                 {/* <Menu.Item as={NavLink} to='/dataManagement' name='Data Management' />
                 <Menu.Item as={NavLink} to='/transactionGUI' name='Transaction GUI' />
