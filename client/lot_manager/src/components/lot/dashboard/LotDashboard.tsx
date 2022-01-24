@@ -1,9 +1,11 @@
 import { observer } from 'mobx-react-lite';
-import React, { useEffect, useRef, useState } from 'react';
-import { Grid, List } from 'semantic-ui-react';
+import React, { useEffect } from 'react';
+import { Grid } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import { useStore } from '../../../app/stores/store';
-import { Lot } from '../../../app/models/Lot';
+// import { Lot } from '../../../app/models/Lot';
+import LotList from './LotList';
+// import LotDetails from '../details/LotDetails';
 
 
 export default observer( function LotDashboard() {
@@ -20,10 +22,11 @@ export default observer( function LotDashboard() {
         <>
             <Grid>
                 <Grid.Column width='10'>
-                    <List>
-                        {}
-                    </List>
+                    <LotList />
                 </Grid.Column>
+                {/* <Grid.Column width='6'>
+                    <LotDetails />
+                </Grid.Column> */}
             </Grid>
         </>
     );

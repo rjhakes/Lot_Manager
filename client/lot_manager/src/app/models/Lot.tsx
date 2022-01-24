@@ -6,7 +6,7 @@ export interface Lot
     lotName: string,
     phone: string,
     addrLine1: string,
-    addrLin12: string | null,
+    addrLine2: string | null,
     city: string,
     state: string,
     zip: string,

@@ -50,7 +50,14 @@ namespace API
             });
 
             // services.AddMediatR(typeof(List.Handler).Assembly);
-            
+            services.AddScoped<ILotRepo, LotRepo>();
+            services.AddScoped<ILotBL, LotBL>();
+            services.AddScoped<ISpotRepo, SpotRepo>();
+            services.AddScoped<ISpotBL, SpotBL>();
+            services.AddScoped<IReservationRepo, ReservationRepo>();
+            services.AddScoped<IReservationBL, ReservationBL>();
+            services.AddScoped<IUserRepo, UserRepo>();
+            services.AddScoped<IUserBL, UserBL>();
             // services.AddScoped<IMapper, Mapper>();
         }
 

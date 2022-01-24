@@ -10,8 +10,8 @@ export default function NavBar() {
                     <img src="/assets/mobile-home.png" className="nav-logo" alt="logo" style={{marginRight: '10px'}}/>
                     {/* Lot Manager */}
                 </Menu.Item>
-                {/* <Menu.Item as={NavLink} to='/dataManagement' name='Data Management' />
-                <Menu.Item as={NavLink} to='/transactionGUI' name='Transaction GUI' />
+                <Menu.Item as={NavLink} to='/lots' name='Lots' />
+                {/* <Menu.Item as={NavLink} to='/transactionGUI' name='Transaction GUI' />
                 <Menu.Item as={NavLink} to='/liveSaleDisplay' name='Live Sale Display' />
                 <Menu.Item as={NavLink} to='/saleScrollDisplay' name='Sale Scroll Display' />
                 <Menu.Item as={NavLink} to='/addonGUI' name='Addon GUI' />

@@ -15,6 +15,10 @@ export default class LotStore {
         makeAutoObservable(this);
     }
 
+    get lots() {
+        return Array.from(this.lotRegistry.values());
+    }
+
     loadLots = async () => {
         this.loadingInitial = true;
         try {
